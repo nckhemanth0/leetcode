@@ -4,9 +4,9 @@
 
 My LeetCode submissions, auto-synced and organized by problem.
 
-<img src="https://leetcard.jacoblin.cool/nckhemanth0?theme=dark&font=Fira%20Code&ext=heatmap" width="80%"/>
+<img src="https://leetcard.jacoblin.cool/__Hemanth_Reddy__?theme=dark&font=Fira%20Code&ext=heatmap" width="80%"/>
 
-<a href="https://leetcode.com/u/nckhemanth0/"><img src="https://img.shields.io/badge/LeetCode_Profile-1f2937?style=flat-square&logo=leetcode&logoColor=FFA116"/></a>
+<a href="https://leetcode.com/u/__Hemanth_Reddy__/"><img src="https://img.shields.io/badge/LeetCode_Profile-1f2937?style=flat-square&logo=leetcode&logoColor=FFA116"/></a>
 
 </div>
 
