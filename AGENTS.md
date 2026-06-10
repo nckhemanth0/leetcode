@@ -14,6 +14,10 @@ Machine-synced dump of all accepted LeetCode submissions. **Not** the curated `l
 | CI | `.github/workflows/sync.yml` — daily 6 AM UTC |
 | Post-sync | `python3 organize.py --apply` — topic folders |
 
+## Personal folder
+
+`personal/` is gitignored — scratch solutions, private notes. Never pushed.
+
 ## Secrets (names only)
 
 - `LEETCODE_SESSION`, `CSRF_TOKEN` — GitHub Actions secrets + local `.env`

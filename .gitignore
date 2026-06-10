@@ -1,18 +1,24 @@
-# Secrets — never commit your LeetCode session
+# ── Personal local folder (never pushed) ──
+# Private notes, scratch solutions, local experiments.
+personal/
+
+# ── Secrets — never commit LeetCode session ──
 .env
+.env.*
 debug.log
 *.cookie
 cookies.txt
 
-# Python
+# ── Python ──
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 
-# OS
+# ── OS / editor ──
 .DS_Store
+.idea/
+*.swp
 
 # organize.py topic cache — committed by CI automatically
-# Uncomment below to also ignore locally:
 # .topic_cache.json
