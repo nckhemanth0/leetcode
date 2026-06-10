@@ -32,4 +32,4 @@ Machine-synced dump of all accepted LeetCode submissions. **Not** the curated `l
 
 ## Redirect
 
-`github.com/nckhemanth0/leetcode` → `leetcode-sync` (old username)
+`github.com/nckhemanth/leetcode` → `leetcode-sync` (legacy repo name)
