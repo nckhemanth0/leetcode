@@ -1,0 +1,55 @@
+name: Daily LeetCode Sync
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # 6 AM UTC = 2 AM ET — runs after midnight grinding
+  workflow_dispatch:        # manual trigger anytime
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install leetcode-export
+        run: pip install leetcode-export
+
+      - name: Sync accepted submissions
+        env:
+          LEETCODE_SESSION: ${{ secrets.LEETCODE_SESSION }}
+          CSRF_TOKEN: ${{ secrets.CSRF_TOKEN }}
+        run: |
+          leetcode-export \
+            --cookies "LEETCODE_SESSION=${LEETCODE_SESSION}; csrftoken=${CSRF_TOKEN}" \
+            --folder solutions \
+            --only-accepted \
+            --only-last-submission \
+            --problem-folder-name '${question_id}-${title_slug}' \
+            --submission-filename '${title_slug}.${extension}' \
+            --no-problem-statement \
+            -v
+
+      - name: Commit and push new solutions
+        run: |
+          git config user.name "nckhemanth0"
+          git config user.email "nckhemanthreddy7@gmail.com"
+          git add solutions/
+          # only commit if there are actual changes
+          if git diff --staged --quiet; then
+            echo "No new solutions today."
+          else
+            COUNT=$(git diff --staged --name-only | grep -c '/' || true)
+            git commit -m "sync: add ${COUNT} new solution(s) [$(date +'%Y-%m-%d')]"
+            git push
+          fi
