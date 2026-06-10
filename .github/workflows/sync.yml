@@ -58,5 +58,6 @@ jobs:
           else
             COUNT=$(git diff --staged --name-only | grep -c '/' || true)
             git commit -m "sync: add ${COUNT} new solution(s) [$(date +'%Y-%m-%d')]"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
