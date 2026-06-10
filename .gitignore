@@ -1,0 +1,13 @@
+# Secrets — never commit your LeetCode session
+.env
+*.cookie
+cookies.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+.DS_Store
