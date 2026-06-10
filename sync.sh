@@ -35,13 +35,28 @@ if ! command -v leetcode-export >/dev/null 2>&1; then
   exit 1
 fi
 
-# Folder name template: 0075-sort-colors ; file template keeps the slug.
-leetcode-export \
-  --cookies "LEETCODE_SESSION=${LEETCODE_SESSION}; csrftoken=${CSRF_TOKEN}" \
-  --folder "solutions" \
-  --only-accepted \
-  --problem-folder-name "{question_frontend_id:04}-{title_slug}" \
-  --problem-statement-filename "README.md" \
-  --submission-filename "{title_slug}.{extension}"
+# Why this is slow: leetcode-export fetches your full submission history,
+# then makes one API call per problem for the README. ~200 problems ≈ 5–10 min.
+# Set FAST_SYNC=1 to skip problem statements (code only, much faster).
+EXPORT_FLAGS=(
+  --cookies "LEETCODE_SESSION=${LEETCODE_SESSION}; csrftoken=${CSRF_TOKEN}"
+  --folder "solutions"
+  --only-accepted
+  --only-last-submission
+  --problem-folder-name '${question_id}-${title_slug}'
+  --submission-filename '${title_slug}.${extension}'
+  -v
+)
 
-echo "✅ Sync complete. Review ./solutions, then commit & push."
+if [[ "${FAST_SYNC:-}" == "1" ]]; then
+  EXPORT_FLAGS+=(--no-problem-statement)
+  echo "⚡ Fast mode: skipping problem statements"
+else
+  EXPORT_FLAGS+=(--problem-statement-filename 'README.md')
+fi
+
+echo "⏳ Syncing LeetCode submissions (this can take several minutes)..."
+leetcode-export "${EXPORT_FLAGS[@]}"
+
+COUNT=$(find solutions -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+echo "✅ Sync complete — ${COUNT} problems in ./solutions"

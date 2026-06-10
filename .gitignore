@@ -1,5 +1,6 @@
 # Secrets — never commit your LeetCode session
 .env
+debug.log
 *.cookie
 cookies.txt
 
