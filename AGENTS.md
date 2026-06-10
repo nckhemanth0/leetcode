@@ -1,6 +1,6 @@
 # AGENTS.md — LeetCode sync
 
-Repo: `nckhemanth0/leetcode-sync` · Auto-synced LeetCode submission mirror.
+Repo: `nckhemanth/leetcode-sync` · Auto-synced LeetCode submission mirror.
 
 ## Purpose
 
@@ -32,4 +32,4 @@ Machine-synced dump of all accepted LeetCode submissions. **Not** the curated `l
 
 ## Redirect
 
-`github.com/nckhemanth0/leetcode` → `leetcode-sync`
+`github.com/nckhemanth0/leetcode` → `leetcode-sync` (old username)
