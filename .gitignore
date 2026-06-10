@@ -12,3 +12,7 @@ venv/
 
 # OS
 .DS_Store
+
+# organize.py topic cache — committed by CI automatically
+# Uncomment below to also ignore locally:
+# .topic_cache.json
