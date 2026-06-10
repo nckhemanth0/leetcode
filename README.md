@@ -1,8 +1,10 @@
 <div align="center">
 
-# 🧩 LeetCode Solutions
+# 🔄 LeetCode Sync
 
-My LeetCode submissions, auto-synced and organized by problem.
+Auto-synced mirror of my LeetCode submissions — organized by problem and topic.
+
+> **Note:** This repo is machine-synced via `leetcode-export`. A separate `leetcode` repo can host hand-picked solutions with writeups.
 
 <img src="https://leetcard.jacoblin.cool/__Hemanth_Reddy__?theme=dark&font=Fira%20Code&ext=heatmap" width="80%"/>
 

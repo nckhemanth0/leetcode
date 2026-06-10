@@ -1,4 +1,4 @@
-name: Daily LeetCode Sync
+name: Daily LeetCode Sync (leetcode-sync)
 
 on:
   schedule:
