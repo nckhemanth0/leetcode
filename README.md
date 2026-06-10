@@ -4,7 +4,7 @@
 
 Auto-synced mirror of my LeetCode submissions — organized by problem and topic.
 
-> **Note:** This repo is machine-synced via `leetcode-export`. A separate `leetcode` repo can host hand-picked solutions with writeups.
+> **Note:** This repo is machine-synced via `leetcode-export`. A separate `leetcode` repo (planned) will host hand-picked solutions with writeups. Agent context: private [`workspace`](https://github.com/nckhemanth0/workspace) hub.
 
 <img src="https://leetcard.jacoblin.cool/__Hemanth_Reddy__?theme=dark&font=Fira%20Code&ext=heatmap" width="80%"/>
 
